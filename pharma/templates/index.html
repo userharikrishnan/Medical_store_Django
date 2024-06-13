@@ -1,0 +1,56 @@
+{% extends 'layout/app-layout2.html'%}
+
+{% block 'content' %}
+<style>
+
+body {
+    background-image: 
+        linear-gradient(#2F2FA2, #2F2FA2),
+        linear-gradient(#EDF5E1, #EDF5E1);
+    background-size: 100% 50vh, 100% 50vh;
+    background-position: top left, bottom left;
+    background-repeat: no-repeat;
+}
+
+a{
+    color: whitesmoke;
+    text-decoration: none;
+    background-color:#343a40;
+    padding: 4px 7px;
+   border-radius: 10px;
+}
+
+a:hover{
+    color: #f13c20;
+}
+
+.nav{
+    position: fixed;
+    top: 8px;
+    right: 7px;
+    
+}
+
+.lower{
+    position: fixed;
+    top: 55%;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+</style>
+<div class="nav">
+    <a href="{% url 'createproduct' %}">Create Product &nbsp;</a>
+    <a href="{% url 'retrieveproduct' %}">Product list &nbsp;</a>
+    <a href="{% url 'product_search' %}">Search products &nbsp;</a>
+   
+</div>
+    
+    <h1 style="margin-top: 35px;">Welcome to MedCare Pharmacy</h1>
+    <p style="margin-top: 40px; line-height: 1.7;"><b>At MedCare Pharmacy, we are committed to providing high-quality pharmaceutical products, medical supplies, and healthcare services to our valued customers. With our knowledgeable pharmacists and friendly staff, we strive to make your pharmacy experience convenient, informative, and personalized.</b></p>
+    
+
+    <p class="lower"><b>Sample Content</b><br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, similique vitae cum consequatur libero laudantium laborum non? Eius iure, quo non quaerat harum facilis exercitationem cum voluptas adipisci! Consequatur, soluta. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur a quaerat facilis repellat? Ad repellat, nisi repellendus sed debitis vero doloribus officia, corrupti illum maxime iste similique aperiam facere ab. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non voluptas eveniet fugit quisquam iste! Fugiat distinctio eligendi pariatur repellendus dicta ullam similique ducimus, quas repellat necessitatibus, tempora expedita at inventore?</p>
+   
+
+{% endblock %} 

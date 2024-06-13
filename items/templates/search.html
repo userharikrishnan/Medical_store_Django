@@ -1,0 +1,35 @@
+{%extends 'layout/app-layout2.html'%}
+{%block 'content'%}
+
+<h1>Search for Products</h1>
+
+<form method="get" action="{% url 'product_search' %}">
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+</form>
+
+{% if products %}
+    <h2>Results:</h2>
+
+    <table border="1">
+        <tr>
+            <th>Product_id</th>
+            <th>Product_name</th>
+            <th>Product_price</th>
+            <th colspan="2">Actions</th></tr>
+    
+    {% for product in products %}
+    <tr>
+        <td>{{ product.id }} </td> 
+        <td>{{ product.name }} </td> 
+        <td>{{ product.price }}</td>
+        <td ><a href="{%url 'updateproduct' product.id %}" class="btn btn-success" value="edit" type="submit">Edit</a></td>
+        <td><a href="{%url 'deleteproduct' product.id %}" class="btn btn-success" value="edit" type="submit">Delete</a></td></tr>
+              
+
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No products found.</p>
+{% endif %}
+{%endblock%}

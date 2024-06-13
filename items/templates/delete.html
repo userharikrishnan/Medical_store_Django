@@ -1,0 +1,40 @@
+{% extends 'layout/app-layout.html'%}
+{%block 'content'%}
+<style>
+
+form{
+    position: relative;
+			width: 350px;
+			height: 130px;
+			top: 250px;
+			margin: auto ;
+			background-color: transparent;
+			backdrop-filter: blur(5px);
+			box-shadow: 0 0 5px 1px  lightblue;
+			border: 2px solid rgba(0, 0, 200, 0.2);
+			border-radius: 3%;
+}
+
+p{
+    margin-left: 25px;
+}
+
+input{
+        margin-left:120px;
+        padding: 7px 25px;
+        border-radius: 5%;
+        background: transparent;
+}
+
+input:hover{
+    background-color: rgba(30, 218, 232,0.3);
+}
+
+</style>
+<a style="text-decoration: none;" href="{% url 'home' %}" >Home</a>
+<form method="post" action="">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{product.name}}"?</p>
+    <input type="submit" value="Confirm">
+</form>
+{% endblock %}

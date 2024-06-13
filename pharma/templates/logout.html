@@ -1,0 +1,53 @@
+<html>
+  <style>
+    body {
+      background-image:url(https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg?w=740&t=st=1711643856~exp=1711644456~hmac=577c87c54ce3e4f8a59f3295b64e57db994be3f93d88f4fa70ca346e31be473a) ;
+      background-repeat: no-repeat;
+      background-size: 100% 100vh;
+    }
+
+    a{
+      text-decoration: none;
+      
+    }
+    a:hover{
+        color: #f13c20;
+    }
+
+    p{
+      display: flex;
+      justify-content: center;
+      margin-top: 250px;
+      
+    }
+
+    button{
+      display: block;
+      margin: auto;
+      padding: 5px 25px;
+      border-radius: 5px;
+      font-size: 16px;
+      background: transparent;
+      
+    }
+
+    button:hover{
+      background-color: rgba(99, 197, 235, 0.3) ;
+    }
+
+  </style>
+  <body>
+    <a href="{% url 'home' %}" >Home</a>
+{% block 'content' %}
+  {% if user.is_authenticated %}
+    <p>You are currently logged in as &nbsp; <span style="color: red;">{{ user.username }}</span>.
+       Are you sure you want to logout?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit"><b>LogOut</b></button>
+    </form>
+  {% endif %}
+{% endblock %}
+
+</body>
+</html>
